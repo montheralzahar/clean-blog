@@ -12,7 +12,9 @@
                         <span class="meta">
                             Posted by
                             <a href="{{ route('index') }}">{{ env('APP_NAME') }}</a>
-                            on {{ date('M d , Y') }}
+                            @if ($post->created_at)
+                                on {{ $post->created_at->format('M d , Y') }}
+                            @endif
                         </span>
                     </div>
                 </div>
